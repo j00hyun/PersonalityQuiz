@@ -1,24 +1,246 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="LeferiBaseRegular.otf">
+            <string>LeferiBaseType-Regular</string>
+        </array>
+        <array key="LeferiPointBlack.otf">
+            <string>LeferiPoint-Black</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Introduction View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="IntroductionViewController" customModule="PersonalityQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cats" translatesAutoresizingMaskIntoConstraints="NO" id="teZ-Qq-J3e">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="E1l-54-42U">
+                                <rect key="frame" x="8" y="393.5" width="398" height="109.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나는 어떤 고앵일까?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Twi-W2-hzv">
+                                        <rect key="frame" x="0.0" y="0.0" width="398" height="49.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="LeferiPoint-Black" family="Leferi Point Type" pointSize="33"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="27"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGA-Hs-e4y">
+                                        <rect key="frame" x="139" y="74.5" width="120" height="35"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="Exg-B1-HKR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="LeferiBaseType-Regular" family="Leferi Base Type" pointSize="15"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="알아보러 가기"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="JRr-ok-7fm" kind="show" id="fdx-wp-fGE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Twi-W2-hzv" firstAttribute="leading" secondItem="E1l-54-42U" secondAttribute="leading" id="L0G-wF-Z45"/>
+                                    <constraint firstAttribute="trailing" secondItem="Twi-W2-hzv" secondAttribute="trailing" id="pB4-Ub-aUI"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="teZ-Qq-J3e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="H4c-Yk-H5u"/>
+                            <constraint firstAttribute="bottom" secondItem="teZ-Qq-J3e" secondAttribute="bottom" id="IGM-hm-tgn"/>
+                            <constraint firstItem="teZ-Qq-J3e" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Odz-k3-eOy"/>
+                            <constraint firstItem="teZ-Qq-J3e" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="aRb-MP-w7z"/>
+                            <constraint firstItem="E1l-54-42U" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="iY5-OW-pFw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="E1l-54-42U" secondAttribute="trailing" constant="8" id="mgF-WW-8R0"/>
+                            <constraint firstItem="E1l-54-42U" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="oMI-9a-CbC"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="83.705357142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="l91-hT-YeK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JRr-ok-7fm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="0Nx-P2-71f"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Lom-KZ-Tsq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="oiZ-5S-V63" kind="relationship" relationship="rootViewController" id="cjm-W5-faM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JLH-aq-bPu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="698.55072463768124" y="83.705357142857139"/>
+        </scene>
+        <!--Question View Controller-->
+        <scene sceneID="rpO-aH-PTZ">
+            <objects>
+                <viewController id="oiZ-5S-V63" customClass="QuestionViewController" customModule="PersonalityQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="evB-1d-UFr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jeo-Nk-oz8">
+                                <rect key="frame" x="20" y="325" width="374" height="192"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m0P-3H-gYD">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="33"/>
+                                        <fontDescription key="fontDescription" name="LeferiBaseType-Regular" family="Leferi Base Type" pointSize="14"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghm-Mg-2gW">
+                                        <rect key="frame" x="0.0" y="53" width="374" height="33"/>
+                                        <fontDescription key="fontDescription" name="LeferiBaseType-Regular" family="Leferi Base Type" pointSize="14"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZg-90-NKh">
+                                        <rect key="frame" x="0.0" y="106" width="374" height="33"/>
+                                        <fontDescription key="fontDescription" name="LeferiBaseType-Regular" family="Leferi Base Type" pointSize="14"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQm-dm-cVu">
+                                        <rect key="frame" x="0.0" y="159" width="374" height="33"/>
+                                        <fontDescription key="fontDescription" name="LeferiBaseType-Regular" family="Leferi Base Type" pointSize="14"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Or6-uw-m9H">
+                                <rect key="frame" x="20" y="76" width="374" height="48"/>
+                                <fontDescription key="fontDescription" name="LeferiPoint-Black" family="Leferi Point Type" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="P4b-93-jBU">
+                                <rect key="frame" x="20" y="818" width="374" height="4"/>
+                            </progressView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zG0-Ms-QXk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Or6-uw-m9H" firstAttribute="top" secondItem="zG0-Ms-QXk" secondAttribute="top" constant="20" id="1Fb-VF-LAv"/>
+                            <constraint firstItem="zG0-Ms-QXk" firstAttribute="trailing" secondItem="jeo-Nk-oz8" secondAttribute="trailing" constant="20" id="Rzj-yO-WyF"/>
+                            <constraint firstItem="P4b-93-jBU" firstAttribute="leading" secondItem="zG0-Ms-QXk" secondAttribute="leading" constant="20" id="Wy6-sD-yU7"/>
+                            <constraint firstItem="zG0-Ms-QXk" firstAttribute="trailing" secondItem="Or6-uw-m9H" secondAttribute="trailing" constant="20" id="a4x-Yg-X1L"/>
+                            <constraint firstItem="jeo-Nk-oz8" firstAttribute="leading" secondItem="zG0-Ms-QXk" secondAttribute="leading" constant="20" id="jbb-YE-vQp"/>
+                            <constraint firstItem="zG0-Ms-QXk" firstAttribute="bottom" secondItem="P4b-93-jBU" secondAttribute="bottom" constant="20" id="lfj-oa-aDM"/>
+                            <constraint firstItem="jeo-Nk-oz8" firstAttribute="centerY" secondItem="evB-1d-UFr" secondAttribute="centerY" id="wxj-mB-9Zc"/>
+                            <constraint firstItem="Or6-uw-m9H" firstAttribute="leading" secondItem="zG0-Ms-QXk" secondAttribute="leading" constant="20" id="xp3-uC-ozK"/>
+                            <constraint firstItem="zG0-Ms-QXk" firstAttribute="trailing" secondItem="P4b-93-jBU" secondAttribute="trailing" constant="20" id="xzc-ii-f59"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="yA3-wD-uzp"/>
+                    <connections>
+                        <segue destination="NM2-Wc-YtP" kind="show" identifier="Results" id="SAv-bq-eno"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wrU-pI-gnL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1608.6956521739132" y="83.705357142857139"/>
+        </scene>
+        <!--결과-->
+        <scene sceneID="7IS-KX-zUn">
+            <objects>
+                <viewController id="NM2-Wc-YtP" customClass="ResultsViewController" customModule="PersonalityQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cmE-aU-Mec">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="SmF-N2-JBF">
+                                <rect key="frame" x="20" y="360.5" width="374" height="121.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QA0-OY-U6p">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="75"/>
+                                        <fontDescription key="fontDescription" name="LeferiPoint-Black" family="Leferi Point Type" pointSize="50"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bi6-zb-ekA">
+                                        <rect key="frame" x="0.0" y="96" width="374" height="25.5"/>
+                                        <fontDescription key="fontDescription" name="LeferiBaseType-Regular" family="Leferi Base Type" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Qmm-Lx-agf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SmF-N2-JBF" firstAttribute="leading" secondItem="Qmm-Lx-agf" secondAttribute="leading" constant="20" id="6Rm-ll-LLj"/>
+                            <constraint firstItem="SmF-N2-JBF" firstAttribute="centerY" secondItem="cmE-aU-Mec" secondAttribute="centerY" id="SGp-IV-KKq"/>
+                            <constraint firstItem="Qmm-Lx-agf" firstAttribute="trailing" secondItem="SmF-N2-JBF" secondAttribute="trailing" constant="20" id="YkY-R3-BrX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="결과" id="XCC-GG-MD5">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="BU6-3c-40R"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8u5-10-ekr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2268.1159420289855" y="83.705357142857139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Cats" width="800" height="800"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
