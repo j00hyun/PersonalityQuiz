@@ -7,6 +7,7 @@
 
 import UIKit
 
+// Label, Button 테두리 속성 인터페이스 빌더에 추가
 @IBDesignable extension UIView {
     @IBInspectable var borderColor:UIColor? {
         set {
