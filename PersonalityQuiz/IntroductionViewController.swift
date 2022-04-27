@@ -47,7 +47,9 @@ class IntroductionViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    
+    // 결과 view에서 Done을 누르면 introduction view로 이동 (question, result view 사라짐)
+    @IBAction func unwindToQuizIntroduction(segue: UIStoryboardSegue) {
+    }
 }
 

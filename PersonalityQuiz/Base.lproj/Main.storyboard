@@ -14,6 +14,9 @@
         <array key="LeferiPointBlack.otf">
             <string>LeferiPoint-Black</string>
         </array>
+        <array key="LeferiPointWhite.otf">
+            <string>LeferiPoint-White</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Introduction View Controller-->
@@ -223,22 +226,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="P4b-93-jBU">
-                                <rect key="frame" x="20" y="818" width="374" height="4"/>
-                            </progressView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fjF-bI-dsa">
+                                <rect key="frame" x="20" y="753" width="374" height="79"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sleeping cat" translatesAutoresizingMaskIntoConstraints="NO" id="rbO-XY-jyT">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="E6b-mN-L5h"/>
+                                        </constraints>
+                                    </imageView>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="P4b-93-jBU">
+                                        <rect key="frame" x="0.0" y="75" width="374" height="4"/>
+                                    </progressView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zG0-Ms-QXk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Or6-uw-m9H" firstAttribute="top" secondItem="zG0-Ms-QXk" secondAttribute="top" constant="20" id="1Fb-VF-LAv"/>
                             <constraint firstItem="zG0-Ms-QXk" firstAttribute="trailing" secondItem="jeo-Nk-oz8" secondAttribute="trailing" constant="20" id="Rzj-yO-WyF"/>
-                            <constraint firstItem="P4b-93-jBU" firstAttribute="leading" secondItem="zG0-Ms-QXk" secondAttribute="leading" constant="20" id="Wy6-sD-yU7"/>
                             <constraint firstItem="zG0-Ms-QXk" firstAttribute="trailing" secondItem="Or6-uw-m9H" secondAttribute="trailing" constant="20" id="a4x-Yg-X1L"/>
+                            <constraint firstItem="zG0-Ms-QXk" firstAttribute="trailing" secondItem="fjF-bI-dsa" secondAttribute="trailing" constant="20" id="bX7-IY-50C"/>
+                            <constraint firstItem="fjF-bI-dsa" firstAttribute="centerX" secondItem="evB-1d-UFr" secondAttribute="centerX" id="hMQ-ra-T5r"/>
+                            <constraint firstItem="fjF-bI-dsa" firstAttribute="leading" secondItem="zG0-Ms-QXk" secondAttribute="leading" constant="20" id="hwX-hg-cLT"/>
                             <constraint firstItem="jeo-Nk-oz8" firstAttribute="leading" secondItem="zG0-Ms-QXk" secondAttribute="leading" constant="20" id="jbb-YE-vQp"/>
-                            <constraint firstItem="zG0-Ms-QXk" firstAttribute="bottom" secondItem="P4b-93-jBU" secondAttribute="bottom" constant="20" id="lfj-oa-aDM"/>
+                            <constraint firstItem="zG0-Ms-QXk" firstAttribute="bottom" secondItem="fjF-bI-dsa" secondAttribute="bottom" constant="10" id="t8X-mE-05v"/>
                             <constraint firstItem="jeo-Nk-oz8" firstAttribute="centerY" secondItem="evB-1d-UFr" secondAttribute="centerY" id="wxj-mB-9Zc"/>
                             <constraint firstItem="Or6-uw-m9H" firstAttribute="leading" secondItem="zG0-Ms-QXk" secondAttribute="leading" constant="20" id="xp3-uC-ozK"/>
-                            <constraint firstItem="zG0-Ms-QXk" firstAttribute="trailing" secondItem="P4b-93-jBU" secondAttribute="trailing" constant="20" id="xzc-ii-f59"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yA3-wD-uzp"/>
@@ -250,14 +265,14 @@
                         <outlet property="answerStackView" destination="jeo-Nk-oz8" id="2VB-lG-cCC"/>
                         <outlet property="questionLabel" destination="Or6-uw-m9H" id="uq7-1G-sNc"/>
                         <outlet property="questionProgressView" destination="P4b-93-jBU" id="wB9-yw-9cj"/>
-                        <segue destination="NM2-Wc-YtP" kind="show" identifier="Results" id="SAv-bq-eno"/>
+                        <segue destination="NM2-Wc-YtP" kind="show" identifier="Results" destinationCreationSelector="showResults:" id="SAv-bq-eno"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wrU-pI-gnL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1608.6956521739132" y="83.705357142857139"/>
         </scene>
-        <!--결과-->
+        <!--Results View Controller-->
         <scene sceneID="7IS-KX-zUn">
             <objects>
                 <viewController id="NM2-Wc-YtP" customClass="ResultsViewController" customModule="PersonalityQuiz" customModuleProvider="target" sceneMemberID="viewController">
@@ -265,21 +280,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="SmF-N2-JBF">
-                                <rect key="frame" x="20" y="360.5" width="374" height="121.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="SmF-N2-JBF">
+                                <rect key="frame" x="20" y="190" width="374" height="458"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QA0-OY-U6p">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="75"/>
-                                        <fontDescription key="fontDescription" name="LeferiPoint-Black" family="Leferi Point Type" pointSize="50"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bi6-zb-ekA">
-                                        <rect key="frame" x="0.0" y="96" width="374" height="25.5"/>
-                                        <fontDescription key="fontDescription" name="LeferiBaseType-Regular" family="Leferi Base Type" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="z1v-gw-Rrf">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="133"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cat head" translatesAutoresizingMaskIntoConstraints="NO" id="dyL-cU-s7J">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="ahX-r9-7Za"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IW5-az-iSz">
+                                                <rect key="frame" x="0.0" y="70" width="374" height="63"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나를 나타내는 고냉이는" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPe-Rz-gfT">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="25.5"/>
+                                                        <fontDescription key="fontDescription" name="LeferiPoint-White" family="Leferi Point Type" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQy-0P-auC">
+                                                        <rect key="frame" x="0.0" y="25.5" width="374" height="37.5"/>
+                                                        <fontDescription key="fontDescription" name="LeferiPoint-Black" family="Leferi Point Type" pointSize="25"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="30"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IwR-a1-NWZ">
+                                        <rect key="frame" x="0.0" y="163" width="374" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="G9u-xD-kFK"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Yrz-nX-HsK">
+                                        <rect key="frame" x="0.0" y="393" width="374" height="65"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QA0-OY-U6p">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="25.5"/>
+                                                <fontDescription key="fontDescription" name="LeferiPoint-White" family="Leferi Point Type" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bi6-zb-ekA">
+                                                <rect key="frame" x="0.0" y="45.5" width="374" height="19.5"/>
+                                                <fontDescription key="fontDescription" name="LeferiBaseType-Regular" family="Leferi Base Type" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -287,21 +352,34 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="SmF-N2-JBF" firstAttribute="leading" secondItem="Qmm-Lx-agf" secondAttribute="leading" constant="20" id="6Rm-ll-LLj"/>
-                            <constraint firstItem="SmF-N2-JBF" firstAttribute="centerY" secondItem="cmE-aU-Mec" secondAttribute="centerY" id="SGp-IV-KKq"/>
+                            <constraint firstItem="SmF-N2-JBF" firstAttribute="centerY" secondItem="Qmm-Lx-agf" secondAttribute="centerY" constant="-30" id="SGp-IV-KKq"/>
                             <constraint firstItem="Qmm-Lx-agf" firstAttribute="trailing" secondItem="SmF-N2-JBF" secondAttribute="trailing" constant="20" id="YkY-R3-BrX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="결과" id="XCC-GG-MD5">
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="BU6-3c-40R"/>
+                    <navigationItem key="navigationItem" id="XCC-GG-MD5">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="BU6-3c-40R">
+                            <connections>
+                                <segue destination="ryd-hV-rRX" kind="unwind" unwindAction="unwindToQuizIntroductionWithSegue:" id="cro-Sw-P7r"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="resultDescriptionLabel" destination="bi6-zb-ekA" id="ixz-g6-vnA"/>
+                        <outlet property="resultImageView" destination="IwR-a1-NWZ" id="W7o-zs-oa0"/>
+                        <outlet property="resultNameLabel" destination="VQy-0P-auC" id="2U6-QR-9Lm"/>
+                        <outlet property="resultTitleLabel" destination="QA0-OY-U6p" id="mtM-uu-oUA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8u5-10-ekr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="ryd-hV-rRX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2268.1159420289855" y="83.705357142857139"/>
         </scene>
     </scenes>
     <resources>
         <image name="Cats" width="800" height="800"/>
+        <image name="cat head" width="355" height="236"/>
+        <image name="sleeping cat" width="382" height="228"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
